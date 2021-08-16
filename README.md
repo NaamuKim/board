@@ -2,5 +2,5 @@
 
 ## The opensource project react board
 
--[ ] Home
--[ ] Auth
+- [ ] Home
+- [ ] Auth
