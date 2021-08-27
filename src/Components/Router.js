@@ -11,6 +11,7 @@ import Info from "../Routes/Info";
 import Board from "../Routes/Board";
 import Login from "../Routes/Login";
 import Signup from "../Routes/Signup";
+import WriteBoard from "../Routes/WriteBoard";
 
 const Routers = () => (
 	<Router>
@@ -22,7 +23,7 @@ const Routers = () => (
 				<Route path="/Board" exact component={Board} />
 				<Route path="/Login" exact component={Login} />
 				<Route path="/Signup" exact component={Signup} />
-
+				<Route path="/WriteBoard" exact component={WriteBoard} />
 				<Redirect from="*" to="/" />
 			</Switch>
 		</>
