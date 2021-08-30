@@ -43,18 +43,16 @@ const Signin = () => {
 
 	const onSubmit = async (event) => {
 		event.preventDefault();
-		Axios.post(process.env.REACT_APP_lOGIN_UR, {
+		Axios.post(process.env.REACT_APP_lOGIN_URL, {
 			id: id,
 			password: password,
 		})
 			.then((response) => {
 				window.alert(response.data.message);
-				const { accessToken } = response.data;
-
-				// API 요청하는 콜마다 헤더에 accessToken 담아 보내도록 설정
-				Axios.defaults.headers.common[
-					"Authorization"
-				] = `Bearer ${accessToken}`;
+				localStorage.setItem("accessToken", response.data.data.accessToken);
+				localStorage.setItem("refreshToken", response.data.data.refreshToken);
+				Axios.defaults.headers.common["x-access-token"] =
+					response.data.data.accessToken;
 			})
 			.catch((error) => {
 				window.alert(error);

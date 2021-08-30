@@ -45,6 +45,9 @@ const Signup = () => {
 
 	const onSubmit = async (event) => {
 		event.preventDefault();
+		if (parseInt(userName) / 1 === 0) {
+			return;
+		}
 		Axios.post(process.env.REACT_APP_SINGUP_URL, {
 			name: userName,
 			id: id,
@@ -53,7 +56,8 @@ const Signup = () => {
 
 			.then((response) => {
 				console.log(response.data);
-				window.alert(response.data.message);
+				if (response.data.message === "User Registerd")
+					window.alert("회원가입이 완료되었습니다");
 			})
 			.catch((error) => {
 				window.alert(error);
