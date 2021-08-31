@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import EditorComponent from "../Components/Editor";
 import Axios from "axios";
+
 const Container = styled.div`
 	width: 80vw;
 	margin: 30px;
@@ -10,6 +11,7 @@ const Container = styled.div`
 	flex-direction: column;
 	align-items: center;
 `;
+
 const Form = styled.form``;
 
 const InputTitle = styled.input`
@@ -19,6 +21,7 @@ const InputTitle = styled.input`
 `;
 
 const Input = styled.input``;
+
 const NoticeWriteComponent = () => {
 	const [title, setTitle] = useState("");
 	const [desc, setDesc] = useState("");

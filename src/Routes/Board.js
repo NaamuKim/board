@@ -39,12 +39,6 @@ const Board = ({ location: { pathname } }) => (
 			<SpanNotice>공지사항</SpanNotice>
 		</Notice>
 		<Table>
-			<colgroup>
-				<col width="10%" />
-				<col width="20%" />
-				<col width="20%" />
-				<col width="50%" />
-			</colgroup>
 			<Thead>
 				<Tr>
 					<Th>구분</Th>
